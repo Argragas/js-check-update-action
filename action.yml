@@ -1,19 +1,24 @@
-name: js-check-update-action 
+name: 'js-check-update-action'
 description: 'check package.json'
 inputs:
   TOKEN_APP:
-    description: ' token app'
+    description: 'token app'
     required: true
+    default: 'World'
   MAIL_USERNAME:
       description: 'user mail'
       required: true
+      default: 'World'
    MAIL_PASSWORD:
     description: 'mail password'
     required: true
+    default: 'World'
   MAIL_TO:
     description: 'mail to'
     required: true
-  
+    default: 'World'
+    
+runs:
 using: "composite"
 steps:
     - uses: actions/checkout@v3
