@@ -24,8 +24,8 @@ runs:
   steps:
       - uses: actions/checkout@v3
         with:
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+          persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 14
@@ -38,8 +38,8 @@ runs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8 #install the python needed
-      - name: execute py script # run the run.py to get the latest data
+          python-version: 3.8 
+      - name: execute py script 
         run: |
           python replace.py
         shell: bash
@@ -51,26 +51,15 @@ runs:
           message: 'update lib via action'
       - uses: dawidd6/action-send-mail@v3
         with:
-          # Required mail server address:
           server_address: smtp.gmail.com
-          # Required mail server port:
           server_port: 465
-          # Optional (recommended): mail server username:
           username: ${{ inputs.MAIL_USERNAME}}
-          # Optional (recommended) mail server password:
           password: ${{ inputs.MAIL_PASSWORD}}
-          # Required mail subject:
           subject: ${{github.repository}} Github Actions job result
-          # Required recipients' addresses:
           to: ${{ inputs.MAIL_TO}}
-          # Required sender full name (address can be skipped):
-          from: GIT # <user@example.com>
-          # Optional whether this connection use TLS (default is true if server_port is 465)
+          from: GIT
           secure: true
-          # Optional plain body:
           body: Build job of ${{github.repository}} completed successfully!
-          # Optional unsigned/invalid certificates allowance:
           ignore_cert: true
           attachments:  console.log, package.json
-          # Optional priority: 'high', 'normal' (default) or 'low'
           priority: low

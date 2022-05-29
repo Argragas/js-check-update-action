@@ -10,7 +10,6 @@ see [action.yml file](action.yml)
 ```yaml
 name: CI
 
-# Controls when the workflow will run
 on:
   workflow_dispatch:
 
