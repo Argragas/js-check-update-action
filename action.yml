@@ -1,6 +1,6 @@
 name: 'js-check-update-action'
 description: 'check package.json'
-shell: bash
+
 inputs:
   TOKEN_APP:
     description: 'token app'
@@ -29,9 +29,12 @@ runs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - run: npm i -g yarn
+      - runs: npm i -g yarn
+        shell: bash
       - run: yarn
+        shell: bash
       - run: yarn yarn-upgrade-minor --non-interactive > console.log
+        shell: bash
       - name: setup python
         uses: actions/setup-python@v2
         with:
@@ -39,6 +42,7 @@ runs:
       - name: execute py script # run the run.py to get the latest data
         run: |
           python replace.py
+        shell: bash
       - uses: actions-js/push@master
         with:
           github_token: ${{ inputs.TOKEN_APP }}
