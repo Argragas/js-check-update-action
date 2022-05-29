@@ -6,10 +6,10 @@ inputs:
     required: true
     default: 'World'
   MAIL_USERNAME:
-      description: 'user mail'
-      required: true
-      default: 'World'
-   MAIL_PASSWORD:
+    description: 'user mail'
+    required: true
+    default: 'World'
+  MAIL_PASSWORD:
     description: 'mail password'
     required: true
     default: 'World'
