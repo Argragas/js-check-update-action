@@ -14,16 +14,12 @@ name: CI
 on:
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  js-check-update-action:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+jobs:
+
+  js-check-update-action:
+    runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - run: echo 'TOKEN=${{ secrets.TOKEN_APP }}' >> $GITHUB_ENV
       - run: echo 'MAIL_USERNAME=${{ secrets.MAIL_USERNAME }}' >> $GITHUB_ENV
