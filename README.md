@@ -1,4 +1,6 @@
 # js-check-update-action
+[![CodeQL](https://github.com/Argragas/js-check-update-action/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/Argragas/js-check-update-action/actions/workflows/codeql-analysis.yml)
+
 This action provides the following functionality for GitHub Actions users:
 - check if minor updates are available for your dependencies.
 - edit package.json file to fix versions.
