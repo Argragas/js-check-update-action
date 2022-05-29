@@ -1,5 +1,6 @@
 name: 'js-check-update-action'
 description: 'check package.json'
+shell: bash
 inputs:
   TOKEN_APP:
     description: 'token app'
