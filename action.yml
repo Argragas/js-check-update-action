@@ -29,7 +29,7 @@ runs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
-      - runs: npm i -g yarn
+      - run: npm i -g yarn
         shell: bash
       - run: yarn
         shell: bash
