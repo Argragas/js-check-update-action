@@ -3,7 +3,6 @@ import json
 def replace():
 
     with open('package.json', 'r') as openfile:
-        # Reading from json file
         json_object = json.load(openfile)
 
     json_object = json.dumps(json_object, indent=4).replace("^","")
